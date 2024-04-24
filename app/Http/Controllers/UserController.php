@@ -35,6 +35,8 @@ class UserController extends Controller
             'name' => $request->name,
             'email' => $request->email,
             'phone' => $request->phone,
+            'position' => $request->position,
+            'department' => $request->department,
             'role' => $request->role,
             'password' => Hash::make($request->password),
         ]);
@@ -60,6 +62,8 @@ class UserController extends Controller
             'email' => $request->email,
             'phone' => $request->phone,
             'role' => $request->role,
+            'position' => $request->position,
+            'department' => $request->department,
         ]);
         if ($request->password) {
             $user->update([

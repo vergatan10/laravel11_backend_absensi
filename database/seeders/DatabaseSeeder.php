@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Company;
 use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -20,6 +21,18 @@ class DatabaseSeeder extends Seeder
             'name' => 'Verga Admin',
             'email' => 'verga@fic16.com',
             'password' => Hash::make('12345678'),
+        ]);
+
+        // data dummy company
+        Company::create([
+            'name' => 'PT. FIC16',
+            'email' => 'fic16@vergatandika.com',
+            'address' => 'Jl. Moh Toha RT005/RW003, Pasar Baru, Karawaci, Tangerang',
+            'latitude' => '-7.747033',
+            'longitude' => '110.35598',
+            'radius_km' => '0.5',
+            'time_in' => '08:00',
+            'time_out' => '17:00'
         ]);
     }
 }
