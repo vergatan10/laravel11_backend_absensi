@@ -27,12 +27,16 @@ class DatabaseSeeder extends Seeder
         Company::create([
             'name' => 'PT. FIC16',
             'email' => 'fic16@vergatandika.com',
-            'address' => 'Jl. Moh Toha RT005/RW003, Pasar Baru, Karawaci, Tangerang',
+            'address' => 'Jl. Moh Toha RT5/RW3, Karawaci, Tgr',
             'latitude' => '-7.747033',
             'longitude' => '110.35598',
             'radius_km' => '0.5',
             'time_in' => '08:00',
             'time_out' => '17:00'
+        ]);
+
+        $this->call([
+            AttendanceSeeder::class,
         ]);
     }
 }

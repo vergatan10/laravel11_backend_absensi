@@ -43,7 +43,31 @@ class AuthController extends Controller
     public function logout(Request $request)
     {
         $request->user()->currentAccessToken()->delete();
-        
+
         return response()->json(['message' => 'Logged out'], 200);
+    }
+
+    //update image profile & face_embedding
+    public function updateProfile(Request $request)
+    {
+        $request->validate([
+            'image' => 'required|image|mimes:jpeg,jpg,png|max:2048',
+            'face_embedding' => 'required',
+        ]);
+
+        $user = $request->user();
+        $image = $request->file('image');
+        $face_embedding = $request->face_embedding;
+
+        //save image
+        $image->storeAs('public/images', $image->hashName());
+        $user->image_url = $image->hashName();
+        $user->face_embedding = $face_embedding;
+        $user->save();
+
+        return response([
+            'message' => 'Profile updated successfully',
+            'user' => $user
+        ], 200);
     }
 }
