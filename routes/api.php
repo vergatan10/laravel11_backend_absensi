@@ -3,6 +3,8 @@
 use App\Http\Controllers\Api\AttendanceController;
 use App\Http\Controllers\Api\AuthController;
 use App\Http\Controllers\Api\CompanyController;
+use App\Http\Controllers\Api\NoteController;
+use App\Http\Controllers\Api\PermissionController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -32,3 +34,9 @@ Route::get('/is-checkin', [AttendanceController::class, 'isCheckedin'])->middlew
 
 //update profile
 Route::post('/update-profile', [AuthController::class, 'updateProfile'])->middleware('auth:sanctum');
+
+//create permission
+Route::apiResource('/api-permission', PermissionController::class)->middleware('auth:sanctum');
+
+//notes
+Route::apiResource('/api-notes', NoteController::class)->middleware('auth:sanctum');
