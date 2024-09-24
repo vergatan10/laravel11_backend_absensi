@@ -1,0 +1,382 @@
+{
+	"info": {
+		"_postman_id": "a755d285-b6f9-493c-83cb-6aef0e8e280e",
+		"name": "Backend Absensi Lara11",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "20980702"
+	},
+	"item": [
+		{
+			"name": "Company",
+			"item": [
+				{
+					"name": "getCompany",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "1|JM5bTeU8dmd5mkVOniQRZYB3XgBDjeNZwJSfuHX61570d90e"
+							}
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": "{{url}}/api/company"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Checkin/Checkout",
+			"item": [
+				{
+					"name": "Checkin",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "1|G9UUlFoqomTke6zU7gLWpzFOYIyBQu1gNwyngMcsfde02314"
+							}
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"latitude\" : \"-12323.321\",\r\n    \"longitude\" : \"12321.000\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{url}}/api/checkin"
+					},
+					"response": []
+				},
+				{
+					"name": "is Checked in",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "1|JM5bTeU8dmd5mkVOniQRZYB3XgBDjeNZwJSfuHX61570d90e"
+							}
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": "{{url}}/api/is-checkin"
+					},
+					"response": []
+				},
+				{
+					"name": "Checkout",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "1|G9UUlFoqomTke6zU7gLWpzFOYIyBQu1gNwyngMcsfde02314"
+							}
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"latitude\" : \"-22131.321\",\r\n    \"longitude\" : \"3333.000\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{url}}/api/checkout"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "getMe",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "1|JM5bTeU8dmd5mkVOniQRZYB3XgBDjeNZwJSfuHX61570d90e"
+							}
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": "{{url}}/api/user"
+					},
+					"response": []
+				},
+				{
+					"name": "updateProfile",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "1|G9UUlFoqomTke6zU7gLWpzFOYIyBQu1gNwyngMcsfde02314"
+							}
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/USER/Downloads/wallpaper/LOGO S5 WM-01.jpg"
+								},
+								{
+									"key": "face_embedding",
+									"value": "asdsadasdasdsadsadsadsadsaasd",
+									"type": "text"
+								}
+							]
+						},
+						"url": "{{url}}/api/update-profile"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Permission",
+			"item": [
+				{
+					"name": "CreatePremission",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "2|UyVKvi9E39zRVbj12ScRwWA79gYMFl8ApZxhy35Kd36b611f"
+							}
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/USER/Downloads/wallpaper/LOGO S5 WM-01.jpg"
+								},
+								{
+									"key": "date",
+									"value": "2024-04-30",
+									"type": "text"
+								},
+								{
+									"key": "reason",
+									"value": "tugas ke balik papan",
+									"type": "text"
+								}
+							]
+						},
+						"url": "{{url}}/api/api-permission"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Notes",
+			"item": [
+				{
+					"name": "Create Note",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "1|LRlPELTERb3CWmUsnppmBQ4iWcnhzwZIkDSvX7C0b126273f"
+							}
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\" : \"meeting besok pagi jam 8\",\r\n    \"note\" : \"siapkan bekal yang enak\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{url}}/api/api-notes"
+					},
+					"response": []
+				},
+				{
+					"name": "getNotes",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "1|JM5bTeU8dmd5mkVOniQRZYB3XgBDjeNZwJSfuHX61570d90e"
+							}
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{url}}/api/api-notes"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\" : \"verga@fic16.com\",\r\n    \"password\" : \"12345678\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{url}}/api/login"
+			},
+			"response": []
+		},
+		{
+			"name": "Logout",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "1|JM5bTeU8dmd5mkVOniQRZYB3XgBDjeNZwJSfuHX61570d90e"
+					}
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": "{{url}}/api/logout"
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "url",
+			"value": "http://localhost:8000",
+			"disabled": true
+		},
+		{
+			"key": "url",
+			"value": "https://absensi-verga.my.id",
+			"type": "string"
+		}
+	]
+}
